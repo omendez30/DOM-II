@@ -38,3 +38,50 @@ let upAndDown = document.querySelector(
 upAndDown.addEventListener("wheel", e => {
   e.target.deltaX;
 });
+
+//drag / drop;
+
+let dragAndDrop = document.querySelector("img");
+
+dragAndDrop.addEventListener("drag", event => {}, false);
+
+dragAndDrop.addEventListener("dragstart", e => {
+  dragged = e.target;
+  e.target.style.opacity = 0.7;
+});
+
+dragAndDrop.addEventListener(
+  "dragover",
+  e => {
+    e.preventDefault();
+  },
+  false
+);
+dragAndDrop.addEventListener("dragenter", e => {
+  if (e.target === "img") {
+    e.target.style.background = "";
+  }
+});
+dragAndDrop.addEventListener(
+  "drop",
+  function(event) {
+    // prevent default action (open as link for some elements)
+    event.preventDefault();
+    // move dragged elem to the selected drop target
+    if (event.target.className == "img") {
+      event.target.style.background = "";
+      dragged.parentNode.removeChild(dragged);
+      event.target.appendChild(dragged);
+    }
+  },
+  false
+);
+
+let script = document.createElement("script");
+
+script.addEventListener("load", event => {
+  alert("Welcome to the Fun Bus!");
+});
+script.src = "js/index.js";
+script.async = true;
+document.getElementsByTagName("script")[0].parentNode.appendChild(script);
