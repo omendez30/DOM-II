@@ -19,6 +19,7 @@ for (let i = 0; i < bgColor.length; i++) {
   );
 }
 
+//keydown
 let pressDown = document.querySelector("body");
 
 pressDown.addEventListener("keydown", e => {
@@ -29,8 +30,11 @@ pressDown.addEventListener("keydown", e => {
   }
 });
 
-// let upAndDown = document.querySelector("img");
+//wheel
+let upAndDown = document.querySelector(
+  ".main-navigation .nav-container .logo-heading"
+);
 
-// upAndDown.addEventListener("wheel", e => {});
-
-// console.log(upAndDown);
+upAndDown.addEventListener("wheel", e => {
+  e.target.deltaX;
+});
