@@ -18,3 +18,19 @@ for (let i = 0; i < bgColor.length; i++) {
     false
   );
 }
+
+let pressDown = document.querySelector("body");
+
+pressDown.addEventListener("keydown", e => {
+  if (e.keyCode === 40) {
+    alert("You're on your way to Fun!");
+  } else if (e.keyCode === 38) {
+    alert("Where are you goin? The fun is down here!");
+  }
+});
+
+// let upAndDown = document.querySelector("img");
+
+// upAndDown.addEventListener("wheel", e => {});
+
+// console.log(upAndDown);
